@@ -79,11 +79,11 @@ def run2():
 			s.close()
 			print("\033[31m[?] Connection Time Out") 
 
-for y in range(size):
+for y in range(threads):
 	if choice == 'y':
 		th = threading.Thread(target = run)
 		th.start()
-      else:
+	else:
 		th = threading.Thread(target = run2)
 		th.start()
 			
